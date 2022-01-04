@@ -5,26 +5,25 @@ import classes from './Counter.module.css';
 
 const Counter = () => {
 
-
-
   const dispatch = useDispatch();
   const counter = useSelector(state => state.counter);
   const show = useSelector(state => state.showCounter);
   const incrementHandler = () => {
-    dispatch({ type: 'increment'});
+    dispatch({ type: 'increase', amount: 1});
   };
 
   const decrementHandler = () => {
     dispatch({ type: 'decrement', amount: 1});
-  }
+  };
 
   const decreaseHandler = () => {
     dispatch({ type: 'decrement', amount: 5});
-  }
+  };
 
   const increaseHandler = () => {
     dispatch({type: 'increase', amount: 5})
-  }
+  };
+  
   const toggleCounterHandler = () => {
     dispatch({ type: 'toggle'});
   };
